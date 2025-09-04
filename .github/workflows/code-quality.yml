@@ -1,0 +1,45 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [main, develop, feature/*]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
+      - name: Check code formatting
+        run: npm run format:check
+      - name: Run type checking
+        run: npm run typecheck
+      - name: Run complexity analysis
+        run: |
+          echo "Running code complexity analysis"
+          # Add complexity analysis tools here
+
+  dependency-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+      - name: Check for outdated dependencies
+        run: npm outdated
+      - name: Check for vulnerable dependencies
+        run: npm audit

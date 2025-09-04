@@ -1,6 +1,7 @@
 /**
  * Decentralized Autonomous Agents (DAA) Integration for ruv-FANN
  * Enables coordination with DAA framework and validation agents
+ * Updated to require JWT authentication for all agent communications
  */
 
 class DAAIntegration {
@@ -9,7 +10,13 @@ class DAAIntegration {
    * @param {Object} daaConfig - Configuration for DAA integration
    */
   constructor(daaConfig = {}) {
-    this.agents = daaConfig.agents || [];
+    this.agents = (daaConfig.agents || []).map(agent => {
+      // Ensure all agents have authentication tokens
+      if (!agent.jwtToken) {
+        return registerAuthenticatedAgent(agent);
+      }
+      return agent;
+    });
     this.coordinationProtocol = daaConfig.protocol || 'mrara-loop';
     this.consensusThreshold = daaConfig.consensusThreshold || 0.66; // 2/3 consensus
     this.timeout = daaConfig.timeout || 10000; // 10 seconds
@@ -55,9 +62,29 @@ class DAAIntegration {
    */
   async submitToAgent(agent, data, attempt = 1) {
     try {
-      // In a real implementation, this would make an actual request to the agent
-      // For now, we'll simulate agent responses
-      return await this.simulateAgentResponse(agent, data);
+      // Require JWT authentication for agent communications
+      if (!agent.jwtToken) {
+        throw new Error(`Agent ${agent.id} missing required JWT authentication token`);
+      }
+      
+      // Verify the JWT token before communication
+      const { verifyToken } = require('../../utils/authUtils');
+const { registerAuthenticatedAgent } = require('../../utils/agentAuthUtils');
+      const decoded = verifyToken(agent.jwtToken);
+      
+      if (!decoded) {
+        throw new Error(`Agent ${agent.id} has invalid or expired authentication token`);
+      }
+      
+      // Add authentication headers to the request
+      const authHeaders = {
+        'Authorization': `Bearer ${agent.jwtToken}`,
+        'Content-Type': 'application/json'
+      };
+      
+      // In a real implementation, this would make an actual authenticated request to the agent
+      // For now, we'll simulate agent responses with authentication
+      return await this.simulateAgentResponse(agent, data, authHeaders);
     } catch (error) {
       // Retry on failure
       if (attempt < this.retryAttempts) {
@@ -74,11 +101,19 @@ class DAAIntegration {
    * Simulate agent response for demonstration
    * @param {Object} agent - Agent to simulate
    * @param {Object} data - Data to process
+   * @param {Object} authHeaders - Authentication headers
    * @returns {Promise<Object>} Simulated response
    */
-  async simulateAgentResponse(agent, data) {
+  async simulateAgentResponse(agent, data, authHeaders = {}) {
     // Simulate processing delay
     await this.delay(Math.random() * 200 + 50); // 50-250ms delay
+    
+    // Simulate authentication verification
+    if (authHeaders['Authorization']) {
+      // In a real implementation, the agent would verify the JWT token
+      // For simulation, we'll just log that authentication is being used
+      console.log(`Agent ${agent.id} verifying authentication token`);
+    }
     
     // Simulate validation result
     const isValid = Math.random() > 0.1; // 90% valid votes
@@ -90,6 +125,7 @@ class DAAIntegration {
       timestamp: Date.now(),
       valid: isValid,
       confidence: confidence,
+      authenticated: !!authHeaders['Authorization'],
       analysis: {
         // Simulate some analysis results
         consistency: Math.random() > 0.2 ? 'high' : 'medium',
@@ -295,24 +331,24 @@ class DAAIntegration {
   }
   
   /**
-   * Register a new agent
+   * Register a new agent with authentication
    * @param {Object} agent - Agent to register
    */
   registerAgent(agent) {
-    // Validate agent
-    if (!agent.id || !agent.type) {
-      throw new Error('Agent must have id and type');
-    }
+    // Register agent with authentication
+    const authenticatedAgent = registerAuthenticatedAgent(agent);
     
     // Check if agent already exists
-    const existingIndex = this.agents.findIndex(a => a.id === agent.id);
+    const existingIndex = this.agents.findIndex(a => a.id === authenticatedAgent.id);
     if (existingIndex >= 0) {
       // Update existing agent
-      this.agents[existingIndex] = agent;
+      this.agents[existingIndex] = authenticatedAgent;
     } else {
       // Add new agent
-      this.agents.push(agent);
+      this.agents.push(authenticatedAgent);
     }
+    
+    return authenticatedAgent;
   }
   
   /**
