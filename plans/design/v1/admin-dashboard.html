@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SecureVote AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar {
+            transition: all 0.3s ease;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="sidebar bg-white w-64 shadow-lg">
+            <div class="p-4 border-b">
+                <div class="flex items-center">
+                    <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                </div>
+            </div>
+            <nav class="p-4">
+                <a href="admin-dashboard.html" class="flex items-center px-4 py-3 bg-primary text-white rounded-lg">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-elections.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg mt-2">
+                    <i class="fas fa-vote-yea mr-3"></i>
+                    <span>Election Management</span>
+                </a>
+                <a href="admin-users.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg mt-2">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>User Management</span>
+                </a>
+                <a href="admin-security.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg mt-2">
+                    <i class="fas fa-shield-alt mr-3"></i>
+                    <span>Security Monitoring</span>
+                </a>
+                <a href="admin-reports.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg mt-2">
+                    <i class="fas fa-chart-bar mr-3"></i>
+                    <span>Reporting</span>
+                </a>
+                <a href="admin-system.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg mt-2">
+                    <i class="fas fa-cog mr-3"></i>
+                    <span>System Management</span>
+                </a>
+                <div class="border-t border-gray-200 my-4"></div>
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg mt-2">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Public Site</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white shadow-sm">
+                <div class="flex justify-between items-center p-4">
+                    <h1 class="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+                    <div class="flex items-center space-x-4">
+                        <button class="p-2 rounded-full hover:bg-gray-100">
+                            <i class="fas fa-bell text-gray-600"></i>
+                        </button>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span class="ml-2 text-gray-700">Admin User</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- Stats Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Elections -->
+                    <div class="card bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100">
+                                <i class="fas fa-vote-yea text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Total Elections</p>
+                                <p class="text-2xl font-bold text-gray-900">24</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Voters -->
+                    <div class="card bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100">
+                                <i class="fas fa-users text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Active Voters</p>
+                                <p class="text-2xl font-bold text-gray-900">124,893</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Status -->
+                    <div class="card bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100">
+                                <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Security Status</p>
+                                <p class="text-2xl font-bold text-gray-900">Maximum</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Uptime -->
+                    <div class="card bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100">
+                                <i class="fas fa-clock text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">System Uptime</p>
+                                <p class="text-2xl font-bold text-gray-900">99.98%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Recent Elections -->
+                    <div class="card bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">Recent Elections</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="font-medium text-gray-900">November 2025 General Election</p>
+                                        <p class="text-sm text-gray-500">Nov 5, 2025</p>
+                                    </div>
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="font-medium text-gray-900">October 2025 Special Election</p>
+                                        <p class="text-sm text-gray-500">Oct 15, 2025</p>
+                                    </div>
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Completed</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="font-medium text-gray-900">September 2025 Primary</p>
+                                        <p class="text-sm text-gray-500">Sep 12, 2025</p>
+                                    </div>
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Completed</span>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <a href="admin-elections.html" class="text-primary font-medium hover:text-blue-700">
+                                    View All Elections <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="card bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">System Status</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">DAA Agents</p>
+                                        <p class="text-sm text-gray-500">98% Active</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Neural Network</p>
+                                        <p class="text-sm text-gray-500">Optimal Performance</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Security Monitoring</p>
+                                        <p class="text-sm text-gray-500">No Threats Detected</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Database</p>
+                                        <p class="text-sm text-gray-500">All Systems Operational</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="mt-8">
+                    <div class="card bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">Quick Actions</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-plus text-primary"></i>
+                                    </div>
+                                    <span class="mt-2 text-sm font-medium text-gray-900">Create Election</span>
+                                </button>
+                                <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-user-plus text-green-600"></i>
+                                    </div>
+                                    <span class="mt-2 text-sm font-medium text-gray-900">Add User</span>
+                                </button>
+                                <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <i class="fas fa-file-export text-purple-600"></i>
+                                    </div>
+                                    <span class="mt-2 text-sm font-medium text-gray-900">Generate Report</span>
+                                </button>
+                                <button class="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
+                                        <i class="fas fa-cog text-yellow-600"></i>
+                                    </div>
+                                    <span class="mt-2 text-sm font-medium text-gray-900">System Settings</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

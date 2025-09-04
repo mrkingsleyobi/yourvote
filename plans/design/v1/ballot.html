@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballot - November 2025 General Election</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .race-card {
+            border-left: 4px solid #2563EB;
+        }
+        .proposition-card {
+            border-left: 4px solid #10B981;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="user-dashboard.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Dashboard</a>
+                        <a href="elections.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Elections</a>
+                        <a href="ballot.html" class="border-b-2 border-primary text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Ballot</a>
+                        <a href="results.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Results</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <i class="fas fa-bell text-xl"></i>
+                    </button>
+                    <div class="ml-3 relative">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span class="ml-2 text-gray-700">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">November 2025 General Election</h1>
+                    <p class="mt-1 text-sm text-gray-500">Tuesday, November 5, 2025</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-lock text-green-600"></i>
+                        <span class="ml-2 text-sm text-gray-600">Quantum-Secure Encryption</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-shield text-green-600"></i>
+                        <span class="ml-2 text-sm text-gray-600">Zero-Knowledge Privacy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-900">Authentication</p>
+                    </div>
+                </div>
+                <div class="flex-1 border-t border-gray-200 mx-4"></div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-900">Ballot</p>
+                    </div>
+                </div>
+                <div class="flex-1 border-t border-gray-200 mx-4"></div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-check text-gray-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-500">Confirmation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Ballot Content -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">Your Ballot</h2>
+                            <p class="mt-1 text-sm text-gray-500">Precinct 124, District 15</p>
+                        </div>
+                        <div class="p-6">
+                            <!-- Race 1 -->
+                            <div class="race-card mb-8 pb-6 border-b">
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">Governor</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="candidate1" name="governor" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="candidate1" class="font-medium text-gray-700">John Smith (Democratic)</label>
+                                            <p class="text-gray-500">Incumbent with 8 years of experience. Focused on education and healthcare reform.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="candidate2" name="governor" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="candidate2" class="font-medium text-gray-700">Jane Johnson (Republican)</label>
+                                            <p class="text-gray-500">Business executive with focus on economic growth and job creation.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="candidate3" name="governor" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="candidate3" class="font-medium text-gray-700">Alex Williams (Independent)</label>
+                                            <p class="text-gray-500">Community organizer focused on environmental protection and social justice.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Race 2 -->
+                            <div class="race-card mb-8 pb-6 border-b">
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">U.S. Senate District 12</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="senate1" name="senate" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="senate1" class="font-medium text-gray-700">Michael Brown (Democratic)</label>
+                                            <p class="text-gray-500">Former state representative with focus on infrastructure and veteran affairs.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="senate2" name="senate" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="senate2" class="font-medium text-gray-700">Sarah Davis (Republican)</label>
+                                            <p class="text-gray-500">Attorney with focus on national security and fiscal responsibility.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Proposition 1 -->
+                            <div class="proposition-card mb-8 pb-6 border-b">
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">Proposition 47 - School Bonds</h3>
+                                <p class="text-gray-600 mb-4">Shall the county issue $250 million in general obligation bonds for school facility improvements, including construction, renovation, and equipment upgrades?</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="prop47-yes" name="prop47" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="prop47-yes" class="font-medium text-gray-700">Yes</label>
+                                            <p class="text-gray-500">Approve the issuance of bonds for school improvements.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="prop47-no" name="prop47" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="prop47-no" class="font-medium text-gray-700">No</label>
+                                            <p class="text-gray-500">Reject the issuance of bonds for school improvements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Proposition 2 -->
+                            <div class="proposition-card">
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">Proposition 48 - Transportation Tax</h3>
+                                <p class="text-gray-600 mb-4">Shall the county implement a 0.5% sales tax increase to fund transportation infrastructure improvements including road repairs, public transit expansion, and bicycle lanes?</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="prop48-yes" name="prop48" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="prop48-yes" class="font-medium text-gray-700">Yes</label>
+                                            <p class="text-gray-500">Approve the sales tax increase for transportation improvements.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="prop48-no" name="prop48" type="radio" class="focus:ring-primary h-4 w-4 text-primary border-gray-300">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="prop48-no" class="font-medium text-gray-700">No</label>
+                                            <p class="text-gray-500">Reject the sales tax increase for transportation improvements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- Review Panel -->
+                    <div class="card bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">Review Your Choices</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Governor</p>
+                                    <p class="text-sm text-gray-500" id="governor-choice">No selection</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">U.S. Senate</p>
+                                    <p class="text-sm text-gray-500" id="senate-choice">No selection</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Proposition 47</p>
+                                    <p class="text-sm text-gray-500" id="prop47-choice">No selection</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Proposition 48</p>
+                                    <p class="text-sm text-gray-500" id="prop48-choice">No selection</p>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button class="w-full bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
+                                    Review Ballot
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Status -->
+                    <div class="card bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">Security Status</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-lock text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Encryption Active</p>
+                                        <p class="text-xs text-gray-500">ML-KEM-768</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-user-secret text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Anonymous Routing</p>
+                                        <p class="text-xs text-gray-500">Onion routing enabled</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-fingerprint text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Zero-Knowledge Proofs</p>
+                                        <p class="text-xs text-gray-500">Ballot secrecy protected</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help -->
+                    <div class="card bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-900">Need Help?</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <button class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-question-circle mr-2"></i>
+                                    View Sample Ballot
+                                </button>
+                                <button class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-headset mr-2"></i>
+                                    Contact Support
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-6 flex justify-end">
+                <button class="bg-gray-200 text-gray-800 px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-300 mr-3">
+                    Clear Ballot
+                </button>
+                <button class="bg-primary text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-700">
+                    Submit Vote
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-200 py-8">
+                <p class="text-base text-gray-400 text-center">&copy; 2025 SecureVote AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to update review panel
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const name = this.name;
+                const label = document.querySelector(`label[for="${this.id}"]`);
+                if (label) {
+                    document.getElementById(`${name}-choice`).textContent = label.textContent;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

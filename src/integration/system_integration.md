@@ -91,7 +91,6 @@ class FACTIntegration {
 - Directed Acyclic Graph messaging for asynchronous vote processing
 - QR-Avalanche consensus for rapid vote confirmation
 - Post-quantum cryptography integration
-- Anonymous onion routing for voter privacy
 
 ### Implementation
 ```javascript

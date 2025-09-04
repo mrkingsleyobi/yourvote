@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVote AI - Cast Your Vote Instantly. Counted Forever.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://framer.com/m/framer.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .problem-card {
+            border-top: 4px solid #EF4444;
+        }
+        .feature-card {
+            border-top: 4px solid #2563EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-b-2 border-primary text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="about.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+                        <a href="features.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="login.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Login</a>
+                    <a href="register.html" class="ml-4 bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Register to Vote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white">
+        <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Cast Your Vote Instantly. Counted Forever.
+                    </h1>
+                    <p class="mt-6 text-xl text-blue-100">
+                        SecureVote AI is the revolutionary voting platform powered by decentralized intelligence. We use AI-native technology to ensure your vote is secure, transparent, and counted in real-time.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="register.html" class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition duration-300 text-center">
+                            Register to Vote
+                        </a>
+                        <a href="#how-it-works" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition duration-300 text-center">
+                            How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-white rounded-2xl p-6 shadow-2xl w-full max-w-md">
+                        <div class="flex justify-center mb-6">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 text-center mb-4">Secure Voting Demo</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-lock text-green-600"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">Quantum-Secure Encryption</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-user-shield text-green-600"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">Zero-Knowledge Privacy</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-check-circle text-green-600"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">Instant Confirmation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-white" id="problems">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Traditional Voting Systems Are Broken.</h2>
+                <p class="mt-4 text-xl text-gray-600">In today's digital world, our voting systems haven't kept up with the times.</p>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Problem 1 -->
+                <div class="problem-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-red-100">
+                            <i class="fas fa-clock text-red-600"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Days of Waiting</h3>
+                        <p class="mt-4 text-gray-600">Paper ballots that take days to count, leaving voters in uncertainty.</p>
+                    </div>
+                </div>
+                
+                <!-- Problem 2 -->
+                <div class="problem-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-red-100">
+                            <i class="fas fa-eye-slash text-red-600"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Opaque Processes</h3>
+                        <p class="mt-4 text-gray-600">Complex systems where voters can't verify their vote was counted correctly.</p>
+                    </div>
+                </div>
+                
+                <!-- Problem 3 -->
+                <div class="problem-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-red-100">
+                            <i class="fas fa-exclamation-triangle text-red-600"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Security Concerns</h3>
+                        <p class="mt-4 text-gray-600">Vulnerable to tampering, coercion, and outdated security measures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Intro Section -->
+    <section class="py-20 bg-gray-50" id="solution">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-bold text-gray-900">We've Reimagined Voting for the Digital Age.</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">SecureVote AI replaces outdated systems with intelligent, decentralized technology that puts power back in the hands of voters.</p>
+                <p class="mt-4 max-w-2xl text-lg text-gray-500 lg:mx-auto">The most secure, transparent, and accessible voting system ever created.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Highlights -->
+    <section class="py-20 bg-white" id="features">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Your Vote, From Registration to Confirmation, in Under 60 Seconds.</h2>
+            </div>
+            
+            <div class="mt-16 space-y-16">
+                <!-- Feature 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Instant Registration</h3>
+                        <p class="mt-4 text-lg text-gray-600">Verify your identity in seconds using secure biometric authentication or government database integration.</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">No more waiting in long lines or dealing with complex paperwork</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">Register from anywhere, anytime</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64" />
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-last lg:order-first">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64" />
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Real-time Voting</h3>
+                        <p class="mt-4 text-lg text-gray-600">Our neural network fabric validates your vote instantly with zero-knowledge privacy protection.</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">See immediate confirmation that your vote was recorded correctly</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">With cryptographic proof you can verify</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Transparent Counting</h3>
+                        <p class="mt-4 text-lg text-gray-600">Thousands of autonomous agents work together to count votes with perfect accuracy and transparency.</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">Watch as votes are counted in real-time</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">With complete transparency and immutable audit trails</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64" />
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-last lg:order-first">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64" />
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Quantum-Secure Protection</h3>
+                        <p class="mt-4 text-lg text-gray-600">Advanced cryptographic protection that's secure against current and future quantum computing threats.</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">Know your vote is protected for decades to come</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                </div>
+                                <p class="ml-3 text-gray-600">With the most advanced security available</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Logos Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Trusted by Election Officials and Security Experts.</h2>
+                <p class="mt-4 text-xl text-gray-600">Our platform meets the highest standards for election security and is trusted by leading organizations.</p>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="flex justify-center items-center p-4 bg-white rounded-lg shadow">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-16" />
+                </div>
+                <div class="flex justify-center items-center p-4 bg-white rounded-lg shadow">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-16" />
+                </div>
+                <div class="flex justify-center items-center p-4 bg-white rounded-lg shadow">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-16" />
+                </div>
+                <div class="flex justify-center items-center p-4 bg-white rounded-lg shadow">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-16" />
+                </div>
+                <div class="flex justify-center items-center p-4 bg-white rounded-lg shadow">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-16" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Voting, Demystified.</h2>
+                <p class="mt-4 text-xl text-gray-600">Get the information you need to make informed decisions about your vote.</p>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Resource 1 -->
+                <div class="card bg-white rounded-lg shadow overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-book text-primary text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">How SecureVote AI Works</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">A simple explanation of our revolutionary technology.</p>
+                        <div class="mt-6">
+                            <a href="#" class="text-primary font-medium hover:text-blue-700">
+                                Learn More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource 2 -->
+                <div class="card bg-white rounded-lg shadow overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-chart-line text-primary text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">City of Springfield Increases Voter Turnout by 40%</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">See how one city transformed their election process.</p>
+                        <div class="mt-6">
+                            <a href="#" class="text-primary font-medium hover:text-blue-700">
+                                Read Case Study <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource 3 -->
+                <div class="card bg-white rounded-lg shadow overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-file-contract text-primary text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Independent Security Assessment Report</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">View our latest third-party security audit results.</p>
+                        <div class="mt-6">
+                            <a href="#" class="text-primary font-medium hover:text-blue-700">
+                                View Report <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold">Ready to Vote with Confidence?</h2>
+            <p class="mt-4 text-xl text-blue-100">Join millions of voters who trust SecureVote AI for the most secure, transparent voting experience available.</p>
+            <div class="mt-10">
+                <a href="register.html" class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <p class="mt-4 text-gray-600">The future of secure, transparent voting.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">How It Works</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Features</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Security</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Resources</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Voting Guides</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Research</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">About Us</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Press</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-base text-gray-400">&copy; 2025 SecureVote AI. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

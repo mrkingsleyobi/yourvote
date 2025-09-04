@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences - SecureVote AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .step-indicator {
+            transition: all 0.3s ease;
+        }
+        .step-indicator.active {
+            background-color: #2563EB;
+            color: white;
+        }
+        .step-indicator.completed {
+            background-color: #10B981;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="about.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+                        <a href="features.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="login.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Login</a>
+                    <a href="register.html" class="ml-4 bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Register to Vote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            <div class="max-w-3xl mx-auto">
+                <!-- Progress Indicator -->
+                <div class="mb-12">
+                    <div class="flex justify-between">
+                        <div class="step-indicator completed w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="step-indicator completed w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="step-indicator completed w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="step-indicator active w-8 h-8 rounded-full flex items-center justify-center">
+                            <span>4</span>
+                        </div>
+                    </div>
+                    <div class="mt-2 h-1 bg-gray-200 rounded-full">
+                        <div class="h-1 bg-primary rounded-full w-full"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <div class="px-6 py-8 sm:px-12 sm:py-12">
+                        <div class="text-center mb-10">
+                            <h1 class="text-3xl font-bold text-gray-900 mb-4">Personalize Your Experience</h1>
+                            <p class="text-lg text-gray-600">Customize your voting preferences and notifications.</p>
+                        </div>
+                        
+                        <!-- Preferences -->
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Notification Preferences</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="font-medium text-gray-900">Election Reminders</p>
+                                            <p class="text-sm text-gray-600">Get notified about upcoming elections</p>
+                                        </div>
+                                        <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                            <input type="checkbox" name="election-reminders" id="election-reminders" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer checked:bg-primary" checked>
+                                            <label for="election-reminders" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="font-medium text-gray-900">Sample Ballot Available</p>
+                                            <p class="text-sm text-gray-600">Notify when sample ballots are ready</p>
+                                        </div>
+                                        <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                            <input type="checkbox" name="sample-ballot" id="sample-ballot" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer checked:bg-primary" checked>
+                                            <label for="sample-ballot" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="font-medium text-gray-900">Results Announcements</p>
+                                            <p class="text-sm text-gray-600">Get election results as they're announced</p>
+                                        </div>
+                                        <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                            <input type="checkbox" name="results" id="results" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer checked:bg-primary">
+                                            <label for="results" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Voting Preferences</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Voting Method</label>
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                            <button class="border border-gray-300 rounded-md p-4 text-center hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary">
+                                                <i class="fas fa-laptop-house text-2xl mb-2"></i>
+                                                <span class="block">Online Voting</span>
+                                            </button>
+                                            <button class="border-2 border-primary rounded-md p-4 text-center bg-blue-50">
+                                                <i class="fas fa-mobile-alt text-2xl mb-2"></i>
+                                                <span class="block">Mobile App</span>
+                                            </button>
+                                            <button class="border border-gray-300 rounded-md p-4 text-center hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary">
+                                                <i class="fas fa-building text-2xl mb-2"></i>
+                                                <span class="block">In-Person</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Accessibility Needs</label>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="screen-reader" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                                <label for="screen-reader" class="ml-2 block text-sm text-gray-700">Screen Reader</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="high-contrast" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                                <label for="high-contrast" class="ml-2 block text-sm text-gray-700">High Contrast</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="large-text" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                                <label for="large-text" class="ml-2 block text-sm text-gray-700">Large Text</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="checkbox" id="audio-assistance" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                                <label for="audio-assistance" class="ml-2 block text-sm text-gray-700">Audio Assistance</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="mt-12 flex justify-between">
+                            <a href="onboarding-step2.html" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-50">
+                                Back
+                            </a>
+                            <a href="onboarding-complete.html" class="bg-primary text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                Complete Setup
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-200 py-8">
+                <p class="text-base text-gray-400 text-center">&copy; 2025 SecureVote AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2563EB;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2563EB;
+        }
+    </style>
+</body>
+</html>
