@@ -1,6 +1,6 @@
 {
   "name": "yourvote",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "This is an AI native Election Voting System to prevent Fraud, maintain availability",
   "main": "src/server.js",
   "directories": {
