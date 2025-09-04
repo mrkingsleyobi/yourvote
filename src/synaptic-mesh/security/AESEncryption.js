@@ -20,7 +20,7 @@ class AESEncryption {
       const iv = crypto.randomBytes(this.ivLength);
       
       // Create cipher
-      const cipher = crypto.createCipherGCM(this.algorithm, key, iv);
+      const cipher = crypto.createCipheriv(this.algorithm, key, iv);
       
       // Encrypt the data
       let encrypted = cipher.update(plaintext, 'utf8', 'hex');
@@ -47,7 +47,7 @@ class AESEncryption {
       const { encryptedData, iv, authTag } = encryptedPacket;
       
       // Create decipher
-      const decipher = crypto.createDecipherGCM(this.algorithm, key, Buffer.from(iv, 'hex'));
+      const decipher = crypto.createDecipheriv(this.algorithm, key, Buffer.from(iv, 'hex'));
       decipher.setAuthTag(Buffer.from(authTag, 'hex'));
       
       // Decrypt the data
