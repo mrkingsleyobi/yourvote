@@ -214,5 +214,44 @@
     "cpuLoad": 1.0325,
     "platform": "linux",
     "uptime": 19869.75
+<<<<<<< HEAD
+=======
+  },
+  {
+    "timestamp": 1757017515945,
+    "memoryTotal": 8303607808,
+    "memoryUsed": 4646400000,
+    "memoryFree": 3657207808,
+    "memoryUsagePercent": 55.95640000631398,
+    "memoryEfficiency": 44.04359999368602,
+    "cpuCount": 4,
+    "cpuLoad": 1.02,
+    "platform": "linux",
+    "uptime": 19899.85
+  },
+  {
+    "timestamp": 1757017546045,
+    "memoryTotal": 8303607808,
+    "memoryUsed": 4615135232,
+    "memoryFree": 3688472576,
+    "memoryUsagePercent": 55.57987971871226,
+    "memoryEfficiency": 44.42012028128774,
+    "cpuCount": 4,
+    "cpuLoad": 0.9825,
+    "platform": "linux",
+    "uptime": 19929.95
+  },
+  {
+    "timestamp": 1757017576145,
+    "memoryTotal": 8303607808,
+    "memoryUsed": 4600680448,
+    "memoryFree": 3702927360,
+    "memoryUsagePercent": 55.40580136224084,
+    "memoryEfficiency": 44.59419863775916,
+    "cpuCount": 4,
+    "cpuLoad": 0.99,
+    "platform": "linux",
+    "uptime": 19960.05
+>>>>>>> feature/token-systems
   }
 ]
