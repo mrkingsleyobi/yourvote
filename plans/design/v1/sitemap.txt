@@ -1,0 +1,88 @@
+# SecureVote AI - Sitemap
+
+## Public Pages
+- / (Homepage)
+- /about (About Us)
+- /features (Features)
+- /security (Security)
+- /resources (Resources)
+- /blog (Blog/News)
+- /contact (Contact)
+- /privacy (Privacy Policy)
+- /terms (Terms of Service)
+
+## Authentication Pages
+- /login (Login)
+- /register (Register)
+- /forgot-password (Forgot Password)
+- /verify-email (Email Verification)
+- /reset-password (Password Reset)
+
+## Onboarding User Flow
+- /onboarding/welcome (Welcome)
+- /onboarding/profile (Profile Setup)
+- /onboarding/biometric (Biometric Setup)
+- /onboarding/security (Security Setup)
+- /onboarding/complete (Onboarding Complete)
+
+## User Pages
+- /dashboard (User Dashboard)
+- /elections (Election List)
+- /election/:id (Election Details)
+- /ballot/:id (Ballot Page)
+- /confirmation/:id (Vote Confirmation)
+- /results/:id (Election Results)
+- /profile (User Profile)
+- /security-status (Security Dashboard)
+- /audit-trail (Audit Trail)
+- /help (Help Center)
+
+## Admin Pages
+- /admin/dashboard (Admin Dashboard)
+- /admin/elections (Election Management)
+- /admin/elections/new (Create Election)
+- /admin/elections/:id (Edit Election)
+- /admin/users (User Management)
+- /admin/users/:id (User Details)
+- /admin/security (Security Monitoring)
+- /admin/reports (Reporting)
+- /admin/system (System Management)
+
+## Auditor Pages
+- /audit/dashboard (Audit Dashboard)
+- /audit/trails (Audit Trails)
+- /audit/verification (Verification Tools)
+- /audit/compliance (Compliance Management)
+- /audit/reports (Audit Reports)
+
+## Pre-launch Landing Pages
+- /pre-launch (Pre-launch Landing)
+- /pre-launch/subscribe (Subscribe for Updates)
+- /pre-launch/thank-you (Thank You)
+
+## Web Application Pages
+- /app/dashboard (Application Dashboard)
+- /app/vote/:id (Voting Interface)
+- /app/results/:id (Live Results)
+- /app/security (Application Security)
+- /app/settings (Application Settings)
+
+## Design System Pages
+- /design-system (Design System Overview)
+- /design-system/colors (Color Palette)
+- /design-system/typography (Typography)
+- /design-system/buttons (Buttons)
+- /design-system/forms (Form Elements)
+- /design-system/cards (Cards)
+- /design-system/navigation (Navigation Components)
+- /design-system/tables (Data Tables)
+- /design-system/modals (Modals)
+- /design-system/notifications (Notifications)
+- /design-system/specialized (Specialized Components)
+
+## Inner Pages
+- /settings (User Settings)
+- /notifications (Notifications)
+- /messages (Messages)
+- /support (Support)
+- /feedback (Feedback)

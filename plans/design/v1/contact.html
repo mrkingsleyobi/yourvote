@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SecureVote AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="about.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+                        <a href="features.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-primary text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="login.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Login</a>
+                    <a href="register.html" class="ml-4 bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Register to Vote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">Contact Us</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Contact Information -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-8 sm:px-12 sm:py-12">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-8">Get in Touch</h2>
+                            
+                            <div class="space-y-6">
+                                <!-- Address -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Our Office</h3>
+                                        <p class="mt-1 text-gray-600">123 Democracy Avenue<br>San Francisco, CA 94107<br>United States</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phone -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-phone-alt text-green-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Phone</h3>
+                                        <p class="mt-1 text-gray-600">+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <i class="fas fa-envelope text-purple-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Email</h3>
+                                        <p class="mt-1 text-gray-600">support@securevote.ai</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Support Hours -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center">
+                                        <i class="fas fa-clock text-yellow-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium text-gray-900">Support Hours</h3>
+                                        <p class="mt-1 text-gray-600">Monday - Friday: 9AM - 6PM PST<br>Saturday: 10AM - 4PM PST<br>Sunday: Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Media -->
+                            <div class="mt-12">
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Us</h3>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i class="fab fa-twitter text-2xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i class="fab fa-facebook-f text-2xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i class="fab fa-linkedin-in text-2xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i class="fab fa-github text-2xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-8 sm:px-12 sm:py-12">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+                            
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                        <input type="text" id="first-name" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                        <input type="text" id="last-name" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                    <select id="subject" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                        <option>Select a subject</option>
+                                        <option>Technical Support</option>
+                                        <option>Account Issues</option>
+                                        <option>Security Concern</option>
+                                        <option>Partnership Inquiry</option>
+                                        <option>Press Inquiry</option>
+                                        <option>General Feedback</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input id="newsletter" name="newsletter" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <label for="newsletter" class="ml-2 block text-sm text-gray-900">Subscribe to our newsletter</label>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit" class="w-full bg-primary text-white px-4 py-3 rounded-md text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="mt-12 bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-8 sm:px-12 sm:py-12">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                            
+                            <div class="space-y-6">
+                                <!-- FAQ 1 -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">How do I register to vote?</h3>
+                                    <p class="mt-2 text-gray-600">You can register to vote by visiting our <a href="register.html" class="text-primary hover:text-blue-700">registration page</a> and completing the online form. You'll need to verify your identity through our secure authentication process.</p>
+                                </div>
+                                
+                                <!-- FAQ 2 -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">Is my vote secure?</h3>
+                                    <p class="mt-2 text-gray-600">Absolutely. We use post-quantum cryptographic algorithms, zero-knowledge proofs, and anonymous routing to ensure your vote is completely secure and private. Learn more on our <a href="security.html" class="text-primary hover:text-blue-700">security page</a>.</p>
+                                </div>
+                                
+                                <!-- FAQ 3 -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">How can I verify my vote was counted?</h3>
+                                    <p class="mt-2 text-gray-600">After submitting your vote, you'll receive a unique vote ID and cryptographic receipt. You can use this to verify your vote was recorded correctly through our blockchain-based audit trail. Visit our <a href="features.html" class="text-primary hover:text-blue-700">features page</a> for more details.</p>
+                                </div>
+                                
+                                <!-- FAQ 4 -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900">What if I need help during the voting process?</h3>
+                                    <p class="mt-2 text-gray-600">Our support team is available during all election periods. You can reach us through the contact form, live chat (available on election days), or by calling our support hotline. We also offer accessibility support for voters with disabilities.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <a href="#" class="text-primary font-medium hover:text-blue-700">
+                                    View All FAQs <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-200 py-8">
+                <p class="text-base text-gray-400 text-center">&copy; 2025 SecureVote AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

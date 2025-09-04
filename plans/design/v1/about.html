@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SecureVote AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://framer.com/m/framer.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="about.html" class="border-b-2 border-primary text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+                        <a href="features.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="login.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Login</a>
+                    <a href="register.html" class="ml-4 bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Register to Vote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">About SecureVote AI</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+        <!-- Mission and Vision -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-8 sm:px-12 sm:py-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                            <p class="text-lg text-gray-600 mb-6">SecureVote AI is revolutionizing the democratic process by creating the most secure, transparent, and accessible voting system ever built. We believe that every vote should be protected, counted accurately, and verified by the voter.</p>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Vision</h2>
+                            <p class="text-lg text-gray-600">We envision a world where voting is not only secure and transparent but also effortless and accessible to everyone, regardless of their technical expertise or physical abilities. Our AI-native platform ensures that democracy thrives in the digital age.</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-8 sm:px-12 sm:py-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Our Leadership Team</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Team Member 1 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-full w-32 h-32" />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Alex Johnson</h3>
+                            <p class="text-primary">CEO & Founder</p>
+                            <p class="mt-2 text-gray-600">Former cybersecurity expert with 15 years of experience in election security.</p>
+                        </div>
+                        
+                        <!-- Team Member 2 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-full w-32 h-32" />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Maria Rodriguez</h3>
+                            <p class="text-primary">CTO</p>
+                            <p class="mt-2 text-gray-600">AI and blockchain specialist with a PhD in computer science.</p>
+                        </div>
+                        
+                        <!-- Team Member 3 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-full w-32 h-32" />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">David Chen</h3>
+                            <p class="text-primary">Head of Security</p>
+                            <p class="mt-2 text-gray-600">Former NSA cryptographer with expertise in quantum-resistant algorithms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History and Milestones -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-8 sm:px-12 sm:py-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Our Journey</h2>
+                    <div class="space-y-12">
+                        <!-- Milestone 1 -->
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2020</h3>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Company Founded</h4>
+                                <p class="text-gray-600">SecureVote AI was founded by a team of election security experts and AI researchers who recognized the need for a modern, secure voting system.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Milestone 2 -->
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2022</h3>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">First Pilot Program</h4>
+                                <p class="text-gray-600">Launched our first pilot program with the City of Springfield, serving 50,000 voters in a municipal election.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Milestone 3 -->
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2023</h3>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Statewide Deployment</h4>
+                                <p class="text-gray-600">Expanded to serve an entire state, handling over 2 million votes in the general election with 99.9% uptime.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Milestone 4 -->
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2024</h3>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Quantum-Resistant Security</h4>
+                                <p class="text-gray-600">Implemented post-quantum cryptographic algorithms, making our system secure against future quantum computing threats.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Milestone 5 -->
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2025</h3>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">International Expansion</h4>
+                                <p class="text-gray-600">Began serving international clients, adapting our platform to meet diverse election requirements worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Values -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-8 sm:px-12 sm:py-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Our Core Values</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Value 1 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-primary text-xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Security First</h3>
+                            <p class="text-gray-600">We never compromise on security. Every aspect of our system is designed with the highest security standards.</p>
+                        </div>
+                        
+                        <!-- Value 2 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-globe-americas text-green-600 text-xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Accessibility</h3>
+                            <p class="text-gray-600">Voting should be accessible to everyone. Our platform meets WCAG standards and supports assistive technologies.</p>
+                        </div>
+                        
+                        <!-- Value 3 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-transparency text-purple-600 text-xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Transparency</h3>
+                            <p class="text-gray-600">We believe in complete transparency. Every vote is verifiable, and our processes are open to public scrutiny.</p>
+                        </div>
+                        
+                        <!-- Value 4 -->
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Innovation</h3>
+                            <p class="text-gray-600">We continuously innovate to stay ahead of threats and provide the best voting experience possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-200 py-8">
+                <p class="text-base text-gray-400 text-center">&copy; 2025 SecureVote AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

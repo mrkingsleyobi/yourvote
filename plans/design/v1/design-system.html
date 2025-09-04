@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - SecureVote AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://framer.com/m/framer.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="about.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+                        <a href="features.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="login.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Login</a>
+                    <a href="register.html" class="ml-4 bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Register to Vote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">Design System</h1>
+            <p class="mt-2 text-gray-600">Consistent design language and components for SecureVote AI</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Color Palette -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="rounded-lg overflow-hidden shadow">
+                <div class="px-4 py-5 sm:p-6 bg-white">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Color Palette</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Primary Colors -->
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Primary</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-primary"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Primary</p>
+                                        <p class="text-sm text-gray-500">#2563EB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-secondary"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Secondary</p>
+                                        <p class="text-sm text-gray-500">#3B82F6</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Status Colors -->
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Status</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-success"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Success</p>
+                                        <p class="text-sm text-gray-500">#10B981</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-warning"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Warning</p>
+                                        <p class="text-sm text-gray-500">#F59E0B</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-error"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Error</p>
+                                        <p class="text-sm text-gray-500">#EF4444</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Neutrals -->
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Neutrals</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-dark"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Dark</p>
+                                        <p class="text-sm text-gray-500">#111827</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-dark-gray"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Dark Gray</p>
+                                        <p class="text-sm text-gray-500">#374151</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-medium-gray"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Medium Gray</p>
+                                        <p class="text-sm text-gray-500">#6B7280</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Background -->
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Background</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-background border"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Background</p>
+                                        <p class="text-sm text-gray-500">#FFFFFF</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-16 h-16 rounded bg-extra-light"></div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-medium text-gray-900">Extra Light</p>
+                                        <p class="text-sm text-gray-500">#E5E7EB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typography -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="rounded-lg overflow-hidden shadow">
+                <div class="px-4 py-5 sm:p-6 bg-white">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Typography</h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h1 class="text-4xl font-bold text-gray-900">H1 Heading - 36px</h1>
+                            <p class="mt-2 text-gray-600">Font weight: Bold (700)</p>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-3xl font-semibold text-gray-900">H2 Heading - 28px</h2>
+                            <p class="mt-2 text-gray-600">Font weight: Semi-bold (600)</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-medium text-gray-900">H3 Heading - 24px</h3>
+                            <p class="mt-2 text-gray-600">Font weight: Medium (500)</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-medium text-gray-900">H4 Heading - 20px</h4>
+                            <p class="mt-2 text-gray-600">Font weight: Medium (500)</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-lg text-gray-900">Body Large - 18px</p>
+                            <p class="mt-2 text-gray-600">Font weight: Regular (400)</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-base text-gray-900">Body Medium - 16px</p>
+                            <p class="mt-2 text-gray-600">Font weight: Regular (400)</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-sm text-gray-900">Body Small - 14px</p>
+                            <p class="mt-2 text-gray-600">Font weight: Regular (400)</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-xs text-gray-900">Caption - 12px</p>
+                            <p class="mt-2 text-gray-600">Font weight: Regular (400)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="rounded-lg overflow-hidden shadow">
+                <div class="px-4 py-5 sm:p-6 bg-white">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Buttons</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Primary Buttons</h3>
+                            <div class="space-y-4">
+                                <button class="bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">
+                                    Primary Button
+                                </button>
+                                <button class="bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded disabled:opacity-50" disabled>
+                                    Disabled Button
+                                </button>
+                                <button class="bg-primary hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg flex items-center">
+                                    <i class="fas fa-download mr-2"></i>
+                                    Button with Icon
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Secondary Buttons</h3>
+                            <div class="space-y-4">
+                                <button class="border border-primary text-primary hover:bg-blue-50 font-medium py-2 px-4 rounded">
+                                    Secondary Button
+                                </button>
+                                <button class="border border-primary text-primary hover:bg-blue-50 font-medium py-2 px-4 rounded disabled:opacity-50" disabled>
+                                    Disabled Button
+                                </button>
+                                <button class="border border-primary text-primary hover:bg-blue-50 font-medium py-3 px-6 rounded-lg flex items-center">
+                                    <i class="fas fa-arrow-right mr-2"></i>
+                                    Button with Icon
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Elements -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="rounded-lg overflow-hidden shadow">
+                <div class="px-4 py-5 sm:p-6 bg-white">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Form Elements</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Text Inputs</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Text Input</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Input</label>
+                                    <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Password Input</label>
+                                    <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Checkboxes & Radios</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <input id="checkbox1" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <label for="checkbox1" class="ml-2 block text-sm text-gray-900">
+                                        Checkbox Option
+                                    </label>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input id="checkbox2" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <label for="checkbox2" class="ml-2 block text-sm text-gray-900">
+                                        Another Option
+                                    </label>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input id="radio1" name="radio-group" type="radio" class="h-4 w-4 text-primary focus:ring-primary border-gray-300">
+                                    <label for="radio1" class="ml-2 block text-sm text-gray-900">
+                                        Radio Option 1
+                                    </label>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input id="radio2" name="radio-group" type="radio" class="h-4 w-4 text-primary focus:ring-primary border-gray-300">
+                                    <label for="radio2" class="ml-2 block text-sm text-gray-900">
+                                        Radio Option 2
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-200 py-8">
+                <p class="text-base text-gray-400 text-center">&copy; 2025 SecureVote AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

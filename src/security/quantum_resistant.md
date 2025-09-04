@@ -34,8 +34,6 @@ This document details the quantum-resistant security mechanisms implemented in t
 ## Multi-Layered Security Architecture
 
 ### Network Security
-- Anonymous onion routing for voter privacy
-- .dark domain system for decentralized addressing
 - Secure communication protocols between agents
 - Firewall and intrusion detection systems
 

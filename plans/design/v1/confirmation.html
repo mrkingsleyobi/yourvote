@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Confirmation - SecureVote AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444',
+                        dark: '#111827',
+                        'dark-gray': '#374151',
+                        'medium-gray': '#6B7280',
+                        'light-gray': '#9CA3AF',
+                        'extra-light': '#E5E7EB',
+                        background: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-vote-yea text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">SecureVote AI</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="user-dashboard.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Dashboard</a>
+                        <a href="elections.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Elections</a>
+                        <a href="ballot.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Ballot</a>
+                        <a href="confirmation.html" class="border-b-2 border-primary text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Confirmation</a>
+                        <a href="security.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Security</a>
+                        <a href="contact.html" class="border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <i class="fas fa-bell text-xl"></i>
+                    </button>
+                    <div class="ml-3 relative">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span class="ml-2 text-gray-700">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            <!-- Confirmation Card -->
+            <div class="card bg-white rounded-lg shadow overflow-hidden max-w-3xl mx-auto">
+                <div class="px-6 py-8 sm:px-12 sm:py-12">
+                    <div class="text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-check-circle text-green-600 text-3xl"></i>
+                            </div>
+                        </div>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-4">Your Vote Has Been Recorded</h1>
+                        <p class="text-lg text-gray-600 mb-8">Thank you for participating in the democratic process. Your vote has been securely recorded and verified.</p>
+                        
+                        <!-- Vote Details -->
+                        <div class="bg-gray-50 rounded-lg p-6 mb-8 text-left">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-4">Vote Details</h2>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Election:</span>
+                                    <span class="font-medium text-gray-900">November 2025 General Election</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Date:</span>
+                                    <span class="font-medium text-gray-900">November 5, 2025</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Vote ID:</span>
+                                    <span class="font-medium text-gray-900">V123456789</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Timestamp:</span>
+                                    <span class="font-medium text-gray-900">10:23:45 UTC</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Security:</span>
+                                    <span class="font-medium text-gray-900">Quantum-Protected</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Verification Options -->
+                        <div class="mb-8">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-4">Verify Your Vote</h2>
+                            <p class="text-gray-600 mb-6">You can verify that your vote was counted correctly using the options below:</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <button class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-qrcode mr-2"></i>
+                                    View QR Code
+                                </button>
+                                <button class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-file-download mr-2"></i>
+                                    Download Receipt
+                                </button>
+                                <button class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-link mr-2"></i>
+                                    View on Blockchain
+                                </button>
+                                <button class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-share-alt mr-2"></i>
+                                    Share (Optional)
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Next Steps -->
+                        <div class="bg-blue-50 rounded-lg p-6 mb-8">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-4">Next Steps</h2>
+                            <ul class="text-left space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">View election results as they become available</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Receive notifications about election outcomes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Participate in future elections</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="results.html" class="bg-primary text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-700 text-center">
+                                View Election Results
+                            </a>
+                            <a href="user-dashboard.html" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-50 text-center">
+                                Return to Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security Indicators -->
+            <div class="mt-12 max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card bg-white rounded-lg shadow p-6 text-center">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-lock text-green-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Quantum-Secure</h3>
+                        <p class="text-sm text-gray-600">Protected against current and future quantum computing threats</p>
+                    </div>
+                    
+                    <div class="card bg-white rounded-lg shadow p-6 text-center">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user-secret text-green-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Anonymous</h3>
+                        <p class="text-sm text-gray-600">Your vote remains private with zero-knowledge privacy protection</p>
+                    </div>
+                    
+                    <div class="card bg-white rounded-lg shadow p-6 text-center">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-clipboard-check text-green-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Verifiable</h3>
+                        <p class="text-sm text-gray-600">Transparent audit trail with cryptographic proof of recording</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-200 py-8">
+                <p class="text-base text-gray-400 text-center">&copy; 2025 SecureVote AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

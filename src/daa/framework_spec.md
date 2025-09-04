@@ -25,7 +25,6 @@ Implementation of the M-R-A-R-A loop:
 - Post-quantum cryptographic protocols
 - Directed Acyclic Graph (DAG) messaging
 - QR-Avalanche consensus algorithm
-- Anonymous onion routing for privacy
 
 ### Security Layer
 - Quantum-resistant cryptography (ML-KEM-768, ML-DSA)
