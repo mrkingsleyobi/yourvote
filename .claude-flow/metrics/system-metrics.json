@@ -694,6 +694,7 @@
     "cpuLoad": 0.775,
     "platform": "linux",
     "uptime": 24533.61
+<<<<<<< HEAD
   },
   {
     "timestamp": 1757022179809,
@@ -826,5 +827,7 @@
     "cpuLoad": 0.6725,
     "platform": "linux",
     "uptime": 24864.71
+=======
+>>>>>>> feature/secure-p2p-messaging
   }
 ]
