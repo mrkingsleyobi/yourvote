@@ -310,6 +310,7 @@
     "cpuLoad": 0.9875,
     "platform": "linux",
     "uptime": 20110.52
+<<<<<<< HEAD
   },
   {
     "timestamp": 1757017756694,
@@ -334,5 +335,7 @@
     "cpuLoad": 0.9325,
     "platform": "linux",
     "uptime": 20170.69
+=======
+>>>>>>> feature/zero-knowledge-proofs
   }
 ]
